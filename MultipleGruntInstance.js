@@ -1,15 +1,21 @@
 var child = require('child_process').exec;
-var one = child('grunt RunTest --target=first',function(error, stdout, stderr) {
-    console.log(stdout);
-    // console.log('stderr: ', stderr);
+child('jasmine-node spec',function(error, stdout, stderr) {
     if (error !== null) {
-        console.log('First process error: ', error);
+        console.log('Jasmine node process error: ', error);
     }
 });
-var two = child('grunt RunTest --target=first',function(error, stdout, stderr) {
-    console.log(stdout);
-    // console.log('stderr: ', stderr);
-    if (error !== null) {
-        console.log('Second process error: ', error);
-    }
-});
+//child('jasmine-node \'Test part 1\' ',function(error, stdout, stderr) {
+//    if (error !== null) {
+//        console.log('Second process error: ', error);
+//    }
+//});
+//child('jasmine-node \'Test part 2\' ',function(error, stdout, stderr) {
+//    if (error !== null) {
+//        console.log('Second process error: ', error);
+//    }
+//});
+//child('jasmine-node \'Test part 3\' ',function(error, stdout, stderr) {
+//    if (error !== null) {
+//        console.log('Second process error: ', error);
+//    }
+//});
