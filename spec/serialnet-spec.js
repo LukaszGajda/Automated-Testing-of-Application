@@ -6,6 +6,7 @@ var options = {
 }
 };
 var winston = require('winston');
+winston.add(winston.transports.File,{name: 'serialnet-info-file',filename: './seriale-info.log',level:'info'});
 var assert = require('assert');
 describe('Serialnet.pl - Test',function(){
 	it('Check if link to help on menu is accessible.',function(){
@@ -15,22 +16,23 @@ describe('Serialnet.pl - Test',function(){
 		.waitFor('#menu', 7000, function(err){
 			if(err)
 			{
-				winston.log('Can\'t find anything.');
+				winston.log('error','Can\'t find anything.');
 			}
 			else
 			{
-				browser.click('#menu [href="http://serialnet.pl/pomoc/"]' , function(err)
+				driver.click('#menu [href="http://serialnet.pl/pomoc/"]' , function(err)
 				{
 					if(err)
 					{
-						winston.log('Can not find element.');
+						winston.log('error','Can not find element.');
 					}
 					else
 					{
+						winston.log('info','Find element.');
 						expect(err).toBe(null);
 					}
 				});
 			}
-		});
+		}).end();
 	},25000);
 });
