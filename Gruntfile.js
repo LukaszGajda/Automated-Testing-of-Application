@@ -29,7 +29,6 @@ module.exports = function(grunt){
 	grunt.registerTask('default', ['webdriver']);
 	grunt.registerTask('RunTest','Change parameter',function(){
 		var option = grunt.option('target');
-		var testsSet = Object.keys(grunt.config('parameter'));
 		var parameter = grunt.config('parameter');
 		grunt.config('webdriver.githubTest.tests',parameter[option].tests);
 		grunt.task.run('webdriver');
