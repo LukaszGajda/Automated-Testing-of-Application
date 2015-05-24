@@ -3,5 +3,5 @@ Chce stworzyć zestaw testów do testowania aplikacji zaimplementowanych na plat
 
 Testy maja obejmować:
 
-1.  Testowanie interfejsu użytkownika (Mashup)
-2.  Testowanie REST api używane w ThingWorx do wywoywania metod zdalnie
+1.  Testowanie interfejsu użytkownika (Mashup).
+2.  Testowanie REST api używane w ThingWorx do wywolywania metod zdalnie.
