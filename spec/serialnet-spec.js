@@ -1,4 +1,3 @@
-'use strict';
 var webdriverio = require('webdriverio');
 var options = { 
  desiredCapabilities: { 
@@ -7,8 +6,7 @@ var options = {
 };
 var winston = require('winston');
 winston.add(winston.transports.File,{name: 'serialnet-info-file',filename: './seriale-info.log',level:'info'});
-var assert = require('assert');
-describe('Serialnet.pl - Test',function(){
+describe('Serialnet.pl',function(){
 	it('Check if link to help on menu is accessible.',function(){
 		var driver = webdriverio.remote(options);
         driver.init();
@@ -34,5 +32,5 @@ describe('Serialnet.pl - Test',function(){
 				});
 			}
 		}).end();
-	},25000);
+	},40000);
 });

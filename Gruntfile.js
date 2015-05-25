@@ -30,6 +30,9 @@ module.exports = function (grunt) {
 			}
 		},
 		webdriver: {
+			githubTest:{
+				tests:['./spec/serialnet-spec.js','./spec/github-spec.js','./spec/first-spec.js']
+			},
 			options: {
 				desiredCapabilities: {
 					browserName: 'chrome'
