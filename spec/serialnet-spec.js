@@ -1,16 +1,8 @@
-var webdriverio = require('webdriverio');
-var options = { 
- desiredCapabilities: { 
- browserName: 'chrome'
-}
-};
 var winston = require('winston');
 winston.add(winston.transports.File,{name: 'serialnet-info-file',filename: './seriale-info.log',level:'info'});
 describe('Serialnet.pl',function(){
 	it('Check if link to help on menu is accessible.',function(){
-		var driver = webdriverio.remote(options);
-        driver.init();
-        driver.url('http://serialnet.pl')
+		browser.url('http://serialnet.pl')
 		.waitFor('#menu', 7000, function(err){
 			if(err)
 			{
@@ -18,7 +10,7 @@ describe('Serialnet.pl',function(){
 			}
 			else
 			{
-				driver.click('#menu [href="http://serialnet.pl/pomoc/"]' , function(err)
+				browser.click('#menu [href="http://serialnet.pl/pomoc/"]' , function(err)
 				{
 					if(err)
 					{

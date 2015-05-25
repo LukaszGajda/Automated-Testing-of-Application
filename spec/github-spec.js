@@ -1,16 +1,8 @@
-var webdriverio = require('webdriverio');
-var options = { 
- desiredCapabilities: { 
- browserName: 'chrome'
-}
-};
 var winston = require('winston');
 winston.add(winston.transports.File,{name: 'github-info-file',filename: './github-info.log',level:'info'});
 describe('Github test', function () {
     it('Checks if title contains the search query.', function(done) {
-        var driver = webdriverio.remote(options);
-        driver.init();
-            driver.url('http://github.com').pause(7000)
+      browser.url('http://github.com').pause(7000)
             .setValue('[name="q"]','grunt-webdriver')
             .submitForm('.js-site-search-form')
             .pause(7000)
