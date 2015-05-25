@@ -1,7 +1,8 @@
+/* global browser */
 var winston = require('winston');
 winston.add(winston.transports.File,{name: 'serialnet-info-file',filename: './seriale-info.log',level:'info'});
 describe('Serialnet.pl',function(){
-	it('Check if link to help on menu is accessible.',function(){
+	it('Check if link to help on menu is accessible.',function(done){
 		browser.url('http://serialnet.pl')
 		.waitFor('#menu', 7000, function(err){
 			if(err)
@@ -23,6 +24,6 @@ describe('Serialnet.pl',function(){
 					}
 				});
 			}
-		}).end();
-	},40000);
+		}).call(done);
+	});
 });
