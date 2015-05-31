@@ -2,6 +2,7 @@
 /// <reference path="../typings/jasmine/jasmine.d.ts"/>
 var assert = require('assert');
 var winston = require('winston');
+
 winston.add(winston.transports.File, { name: 'first-info-file', filename: './first-info.log', level: 'info' });
 describe('ThingWorx Test', function () {
     it('Checks if title is valid.', function () {
