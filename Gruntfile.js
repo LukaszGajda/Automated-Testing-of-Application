@@ -36,7 +36,9 @@ module.exports = function (grunt) {
 			options: {
 				desiredCapabilities: {
 					browserName: 'chrome'
-				}
+				},
+				slow:75,
+				output:'log'
 			}
 		}
 	});
