@@ -9,18 +9,22 @@ module.exports = function (grunt) {
 				tests: ['./spec/github-spec.js']
 			}
 		},
+		run: {
+			exec: {
+				args: ['TestWithTwoUser.js','5']
+
+			}
+		},
 		execute: {
 			target: {
-				src: ['./MultipleGruntInstance.js']
+				src: ['browserOne.js']
 			}
 		},
 		'start-selenium-server': {
 			dev: {
 				options: {
 					downloadUrl: 'http://selenium-release.storage.googleapis.com/2.45/selenium-server-standalone-2.45.0.jar',
-					downloadLocation: './',
-					serverOptions: {},
-					systemProperties: {}
+					downloadLocation: './'
 				}
 			}
 		},
@@ -30,19 +34,20 @@ module.exports = function (grunt) {
 			}
 		},
 		webdriver: {
-			githubTest:{
-				tests:['./spec/serialnet-spec.js','./spec/github-spec.js','./spec/first-spec.js']
+			githubTest: {
+				tests: ['./spec/serialnet-spec.js', './spec/github-spec.js', './spec/first-spec.js']
 			},
 			options: {
 				desiredCapabilities: {
 					browserName: 'chrome'
 				},
-				slow:75,
-				output:'log'
+				slow: 75,
+				output: 'log'
 			}
 		}
 	});
 
+	grunt.loadNpmTasks('grunt-run');
 	grunt.loadNpmTasks('grunt-execute');
 	grunt.loadNpmTasks('grunt-webdriver');
 	grunt.loadNpmTasks('grunt-selenium-server');
@@ -50,7 +55,12 @@ module.exports = function (grunt) {
 	grunt.registerTask('Exec', ['execute']);
 	//run selenium server other task and stop selenium server
 	grunt.registerTask('devUI', 'run selenium server and phpunit', function () {
-		grunt.task.run(['start-selenium-server:dev', 'execute', 'stop-selenium-server:dev']);
+		//		var option = grunt.option('count');
+		//		var target = grunt.option('target');
+		//		var args = [];
+		//		args.push(target + '.js ' + option);
+		//		grunt.config('run.exec.args', args);
+		grunt.task.run(['start-selenium-server:dev','execute','run:exec','stop-selenium-server:dev']);
 	});
 	// run only one task at time from webdriver
 	grunt.registerTask('default', ['webdriver']);
