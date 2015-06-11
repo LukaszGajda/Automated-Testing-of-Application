@@ -1,0 +1,5 @@
+{
+	"Credentials":{"login":"lgajda","password":"FtmRgUwmvCLj1ayYyFnE"},
+	"Path":"46.242.130.58:8084/Thingworx/Runtime/index.html",
+	"Mashups":["#mashup=AuditMashup","#mashup=UploadPage","#mashup=AuditStartPage"]
+}
