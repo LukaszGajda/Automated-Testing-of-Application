@@ -17,7 +17,7 @@ var logger = new (winston.Logger)({
 
 //pobieram plik z konfiguracją
 var config = JSON.parse(fs.readFileSync('spec/ThingWorxConfig.json','utf-8'));
-
+var logon = config.Credentials.login + ':' + config.Credentials.password + '@';
 //opis grupy testów
 describe('ThingWorx Test', function () {
 	// it opisuje kolejne testy
@@ -25,7 +25,7 @@ describe('ThingWorx Test', function () {
 	// Pobieramy stronę i sprawdzamy czy tytuł strony ma poprawna nazwę
     it('Checks if title is valid.', function () {
 		//pobieramy stronę
-		browser.url('http://' + config.Credentials.login + ':' + config.Credentials.password + '@' + config.Path + config.Mashups[0])
+		browser.url('http://' + logon + config.Mashup + config.Mashups[0])
 		//czekaj 10s az strona się załaduje
 			.pause(10000)
 			//pobierz tytuł
@@ -40,7 +40,7 @@ describe('ThingWorx Test', function () {
 	//Sprawdzamy czy po wpisaniu ciągu znaków do textboxa i wciśnieciu pprzycisku wyskoczy nam komunikat że nie ma pliku o podanej nazwie
 	it('Check if you can fill form and click button', function(done){
 		//pobierz stronę
-		browser.url('http://' + config.Credentials.login + ':' + config.Credentials.password + '@' + config.Path + config.Mashups[0])
+		browser.url('http://' + logon + config.Mashup + config.Mashups[0])
 		//poczekaj az załaduje sie textbox
 		.waitFor('#root_ContainedMashup-9_Textbox-9 input', 7000, function(err){
 			//wpisz do textboxa tekst 'test123'
