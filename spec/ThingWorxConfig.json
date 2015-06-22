@@ -2,5 +2,7 @@
 	"Credentials":{"login":"lgajda","password":"FtmRgUwmvCLj1ayYyFnE"},
 	"Mashup":"89.72.45.142:8084/Thingworx/Runtime/index.html#mashup=",
 	"Mashups":["AuditMashup","UploadPage","AuditStartPage"],
-	"Thing":"89.72.45.142:8084/Thingworx/Things/"
+	"Thing":"89.72.45.142:8084/Thingworx/Things/",
+	"Things":["TWxPDataExportRepository"],
+	"Services":["CreateFolder","BrowseDirectory","DeleteFile","DeleteFolder"]
 }
