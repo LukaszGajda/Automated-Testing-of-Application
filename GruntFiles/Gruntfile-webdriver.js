@@ -3,7 +3,7 @@ module.exports = function (grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		webdriver: {
 			githubTest: {
-				tests: ['./spec/serialnet-spec.js', './spec/github-spec.js', './spec/first-spec.js']
+				tests: ['./spec/*.js']
 			},
 			options: {
 				desiredCapabilities: {
@@ -11,9 +11,8 @@ module.exports = function (grunt) {
 				}
 			}
 		}
-	});
-	
+	});	
 	grunt.loadNpmTasks('grunt-webdriver');
-	// run only one task at time from webdriver
 	grunt.registerTask('default', ['webdriver']);
 };
+
