@@ -1,0 +1,140 @@
+{
+	"dataShape": {
+		"fieldDefinitions": {
+			"isPersistent": {
+				"name": "isPersistent",
+				"description": "Flag indicating whether or not this field has a persistent value",
+				"baseType": "BOOLEAN",
+				"ordinal": 0,
+				"aspects": {}
+			},
+			"isLogged": {
+				"name": "isLogged",
+				"description": "Flag indicating whether or not this field has a persistent value",
+				"baseType": "BOOLEAN",
+				"ordinal": 0,
+				"aspects": {}
+			},
+			"baseType": {
+				"name": "baseType",
+				"description": "Base data type",
+				"baseType": "BASETYPENAME",
+				"ordinal": 0,
+				"aspects": {}
+			},
+			"description": {
+				"name": "description",
+				"description": "Description",
+				"baseType": "STRING",
+				"ordinal": 0,
+				"aspects": {}
+			},
+			"name": {
+				"name": "name",
+				"description": "Name",
+				"baseType": "STRING",
+				"ordinal": 0,
+				"aspects": {
+					"isPrimaryKey": true
+				}
+			},
+			"isReadOnly": {
+				"name": "isReadOnly",
+				"description": "Flag indicating whether or not this field is read only",
+				"baseType": "BOOLEAN",
+				"ordinal": 0,
+				"aspects": {}
+			}
+		}
+	},
+	"rows": [
+		{
+			"isPersistent": false,
+			"isLogged": true,
+			"baseType": "NUMBER",
+			"description": "battery voltage",
+			"name": "Battery",
+			"isReadOnly": false
+		},
+		{
+			"isPersistent": false,
+			"isLogged": true,
+			"baseType": "NUMBER",
+			"description": "",
+			"name": "CO",
+			"isReadOnly": false
+		},
+		{
+			"isPersistent": false,
+			"isLogged": true,
+			"baseType": "NUMBER",
+			"description": "Carbon dioxide",
+			"name": "CO2",
+			"isReadOnly": false
+		},
+		{
+			"isPersistent": false,
+			"isLogged": true,
+			"baseType": "NUMBER",
+			"description": "",
+			"name": "Dust",
+			"isReadOnly": false
+		},
+		{
+			"isPersistent": false,
+			"isLogged": true,
+			"baseType": "NUMBER",
+			"description": "Current Humidity",
+			"name": "Humidity",
+			"isReadOnly": false
+		},
+		{
+			"isPersistent": true,
+			"isLogged": false,
+			"baseType": "NUMBER",
+			"description": "",
+			"name": "InventoryNumber",
+			"isReadOnly": false
+		},
+		{
+			"isPersistent": false,
+			"isLogged": true,
+			"baseType": "NUMBER",
+			"description": "",
+			"name": "Magnetic",
+			"isReadOnly": false
+		},
+		{
+			"isPersistent": false,
+			"isLogged": false,
+			"baseType": "NUMBER",
+			"description": "",
+			"name": "Photo",
+			"isReadOnly": false
+		},
+		{
+			"isPersistent": false,
+			"isLogged": true,
+			"baseType": "NUMBER",
+			"description": "",
+			"name": "PIR",
+			"isReadOnly": false
+		},
+		{
+			"isPersistent": false,
+			"isLogged": false,
+			"baseType": "NUMBER",
+			"description": "Received signal strength indicator",
+			"name": "RSSI",
+			"isReadOnly": false
+		},
+		{
+			"isPersistent": false,
+			"isLogged": true,
+			"baseType": "NUMBER",
+			"description": "Last temperature",
+			"name": "Temperature",
+			"isReadOnly": false
+		}
+	]
+}
