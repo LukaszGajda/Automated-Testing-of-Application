@@ -23,7 +23,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-run');
 	grunt.loadNpmTasks('grunt-selenium-server');
 	//run selenium server other task and stop selenium server
-	grunt.registerTask('devUI', 'run selenium server and phpunit', function () {
+	grunt.registerTask('LoadTest', 'run selenium server and phpunit', function () {
 		grunt.task.run(['start-selenium-server:dev','run:exec','stop-selenium-server:dev']);
 	});
 	
