@@ -1,0 +1,75 @@
+{
+	"dataShape": {
+		"fieldDefinitions": {
+			"name": {
+				"name": "name",
+				"description": "File name",
+				"baseType": "STRING",
+				"ordinal": 0,
+				"aspects": {
+					"isPrimaryKey": true
+				}
+			},
+			"fileType": {
+				"name": "fileType",
+				"description": "File type",
+				"baseType": "STRING",
+				"ordinal": 0,
+				"aspects": {}
+			},
+			"path": {
+				"name": "path",
+				"description": "Full path",
+				"baseType": "STRING",
+				"ordinal": 0,
+				"aspects": {
+					"isPrimaryKey": true
+				}
+			},
+			"lastModifiedDate": {
+				"name": "lastModifiedDate",
+				"description": "Date last modified",
+				"baseType": "DATETIME",
+				"ordinal": 0,
+				"aspects": {}
+			},
+			"size": {
+				"name": "size",
+				"description": "File size",
+				"baseType": "NUMBER",
+				"ordinal": 0,
+				"aspects": {}
+			}
+		}
+	},
+	"rows": [
+		{
+			"fileType": "F",
+			"name": "Things_Test-2.xml",
+			"path": "/",
+			"lastModifiedDate": 1422912286000,
+			"size": 2683
+		},
+		{
+			"fileType": "F",
+			"name": "Things_Test-1.xml",
+			"path": "/",
+			"lastModifiedDate": 1422909526000,
+			"size": 2380
+		},
+		{
+			"fileType": "F",
+			"name": "Mashups_AcmeBeverageTargetBackUp.xml",
+			"path": "/",
+			"lastModifiedDate": 1422993727000,
+			"size": 752
+		},
+		{
+			"fileType": "F",
+			"name": "Mashups_SensorsMashup.xml",
+			"path": "/",
+			"lastModifiedDate": 1423007615000,
+			"size": 220506
+		}
+	]
+}
