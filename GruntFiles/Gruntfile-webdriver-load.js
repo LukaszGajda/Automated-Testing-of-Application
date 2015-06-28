@@ -3,13 +3,14 @@ module.exports = function (grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		run: {
 			exec: {
-				args: ['TestWithTwoUser.js','5']
+				args: ['MultipleWebdriver.js', '5', '1']
 			}
 		},
 		'start-selenium-server': {
 			dev: {
 				options: {
-					downloadUrl: 'http://selenium-release.storage.googleapis.com/2.45/selenium-server-standalone-2.45.0.jar',
+					downloadUrl: 'http://selenium-release.storage.googleapis.com'
+					+ '/2.45/selenium-server-standalone-2.45.0.jar',
 					downloadLocation: './'
 				}
 			}
@@ -18,13 +19,13 @@ module.exports = function (grunt) {
 			dev: {
 
 			}
-		}			
+		}
 	});
 	grunt.loadNpmTasks('grunt-run');
 	grunt.loadNpmTasks('grunt-selenium-server');
 	//run selenium server other task and stop selenium server
-	grunt.registerTask('LoadTest', 'run selenium server and phpunit', function () {
-		grunt.task.run(['start-selenium-server:dev','run:exec','stop-selenium-server:dev']);
+	grunt.registerTask('LoadTest', 'run selenium server and webdriverio', function () {
+		grunt.task.run(['start-selenium-server:dev', 'run:exec', 'stop-selenium-server:dev']);
 	});
 	
 	// stop selenium server if error occure while working with grunt
