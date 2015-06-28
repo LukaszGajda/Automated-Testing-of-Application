@@ -16,7 +16,7 @@ var logger = new (winston.Logger)({
 });
 //pobieram plik z konfiguracją
 var config = JSON.parse(fs.readFileSync('spec/ThingWorxConfig.json','utf-8'));
-var logon = config.Credentials.login + ':' + config.Credentials.password + '@';
+var logon = config.Credentials[0].login + ':' + config.Credentials[0].password + '@';
 //opis grupy testów
 describe('ThingWorx Test', function () {
 	// it opisuje kolejne testy
