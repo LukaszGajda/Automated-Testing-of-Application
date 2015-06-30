@@ -7,7 +7,8 @@ var logon = config.Credentials.login + ':'
 	+ config.Credentials.password + '@';
 var url = "http://" + logon + config.Mashup + config.Mashups[0];
 page.open(url, function () {
-	var ua = page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function () {
+	var ua = page.includeJs("http://ajax.googleapis.com"+
+	"/ajax/libs/jquery/1.6.1/jquery.min.js", function () {
 		page.evaluate(function () {
 			var textbox = $("#root_ContainedMashup-9_Textbox-9 input");
 			textbox.val('test123');
