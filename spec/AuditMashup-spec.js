@@ -51,22 +51,24 @@ describe('ThingWorx Test', function () {
 		});
 	});
 
-	it('Check if you could uploadfile.', function (done) {
+	it('Check if you could run audit', function (done) {
 		browser.url('http://' + logon + config.Mashup + config.Mashups[0]).pause(5000);
-		browser.setValue('.fileupload-file-input', 'L:\magisterka rok 2\Systemy FTC\SBiFTC\thingworx\imported files\Mashups_wykresTest.xml').then(function () {
-			browser.waitForValue('.fileupload-file-input', 5000).then(function (value) {
-				if (value) {
-					browser.click('.fileupload-submit-button', function () {
-						browser.pause(2000).waitForExist('div [title="Mashups_wykresTest.xml"]', 5000).then(function (internal) {
-							assert(!internal);
-							browser.call(done);
+		browser.click('.fileupload-file-input').then(function () {
+			browser.pause(2000).element('.fileupload-file-input').keys('Mashups_wykresTest.xml').then(function () {
+				browser.waitForValue('.fileupload-file-input', 5000).then(function (value) {
+					if (value) {
+						browser.click('.fileupload-submit-button', function () {
+							browser.pause(2000).waitForExist('div [title="Mashups_wykresTest.xml"]', 5000).then(function (internal) {
+								assert(!internal);
+								browser.call(done);
+							});
 						});
-					});
-				}
-				else {
-					console.log('Well done!');
-					browser.call(done);
-				}
+					}
+					else {
+						console.log('Well done!');
+						browser.call(done);
+					}
+				});
 			});
 		});
 	});
